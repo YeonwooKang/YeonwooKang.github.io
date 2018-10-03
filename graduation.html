@@ -1,0 +1,57 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>면무 졸업</title>
+    <style type="text/css">
+    .counter {width:600px; margin:0 auto;padding:80px 0 0 0;text-align:center;font-size:20px;}
+    .counter .num {font-size:50px;}
+    body {
+        color:white;
+        background: black;
+    }
+    </style>
+</head>
+<body>
+
+<div class="counter">
+    <span id="target-day"></span><span class="text_target"></span><br>
+    <span id="dday-timer" class="num"></span>
+    <span id="time-day" class="num"></span>
+    <span class="txt">일</span>
+    <span id="time-hour" class="num"></span>
+    <span class="txt">시간</span>
+    <span id="time-minute" class="num"></span>
+    <span class="txt">분</span>
+    <span id="time-second" class="num"></span>
+    <span class="txt">초</span>
+</div>
+<script type="text/javascript">
+    var ddaytimer = setInterval (dayGap, 1000)
+    function dayGap () {
+        var dday = new Date("Feburary 16, 2019 00:00:00");
+        var ddayChange = dday.getTime();
+        var nowday = new Date();//현재
+        nowday = nowday.getTime();//
+        var distance = ddayChange - nowday;//디데이에서 현재까지 
+        var d = Math.floor(distance / (1000 * 60 * 60 * 24));//일
+
+        var h = Math.floor((distance / (1000*60*60)) % 24);//시간
+        var m = Math.floor((distance / (1000*60)) % 60);//분
+        var s = Math.floor((distance / 1000) % 60);//초
+
+        if (distance <= 0) {
+            document.getElementById("dday-timer").innerHTML = "면무 졸업";
+        } else {
+            document.getElementById("target-day").innerHTML = "면무 졸업까지";
+            document.getElementById("time-day").innerHTML = d;
+            document.getElementById("time-hour").innerHTML = h;
+            document.getElementById("time-minute").innerHTML = m;
+            document.getElementById("time-second").innerHTML = s;
+        }
+    }
+</script>
+
+</body>
+</html>
