@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>2018 하반기 한화 신입사원 1팀 1파트</title>
     <style type="text/css">
-    .counter {width:600px; margin:0 auto;padding:80px 0 0 0;text-align:center;font-size:20px;}
-    .counter .num {font-size:50px;}
+    .counter {width:900px; margin:0 auto;padding:80px 0 0 0;text-align:center;font-size:150px;}
+    .counter .num {font-size:100px;}
     body {
         color:orange;
         background: black;
@@ -29,7 +29,7 @@
 <script type="text/javascript">
     var ddaytimer = setInterval (dayGap, 1000)
     function dayGap () {
-        var dday = new Date("Feburary 11, 2019 00:00:00");
+        var dday = new Date("Feburary 11, 2019 09:00:00");
         var ddayChange = dday.getTime();
         var nowday = new Date();//현재
         nowday = nowday.getTime();//
@@ -41,10 +41,10 @@
         if (distance <= 0) {
             document.getElementById("dday-timer").innerHTML = "";
             document.getElementById("target-day").innerHTML = "KEY 파트가 만난지";
-            document.getElementById("time-day").innerHTML = d;
-            document.getElementById("time-hour").innerHTML = h;
-            document.getElementById("time-minute").innerHTML = m;
-            document.getElementById("time-second").innerHTML = s;
+            document.getElementById("time-day").innerHTML = d * -1;
+            document.getElementById("time-hour").innerHTML = h * -1;
+            document.getElementById("time-minute").innerHTML = m * -1;
+            document.getElementById("time-second").innerHTML = s * -1;
         } else {
             document.getElementById("target-day").innerHTML = "";
             document.getElementById("time-day").innerHTML = d;
